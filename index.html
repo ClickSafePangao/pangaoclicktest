@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ClickSafe - Project PROTECT</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to right, #d8891b, #1c4c88);
+      color: white;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    nav {
+      background-color: black;
+      padding: 1rem;
+      display: flex;
+      gap: 2rem;
+      justify-content: center;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 0.5rem;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      color: white;
+      font-size: 2rem;
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      z-index: 1100;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+    }
+
+    header {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      padding: 6rem 4rem 4rem;
+      flex: 1;
+    }
+
+    .text-section {
+      max-width: 50%;
+    }
+
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 1.5rem;
+    }
+
+    p {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+      line-height: 1.6;
+    }
+
+    .btn {
+      background-color: #f28c28;
+      color: white;
+      padding: 1rem 2rem;
+      border-radius: 30px;
+      font-weight: bold;
+      text-decoration: none;
+      display: inline-block;
+      letter-spacing: 2px;
+    }
+
+    .phone-img {
+      max-width: 300px;
+    }
+
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: block;
+      }
+
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background-color: black;
+        width: 100%;
+        text-align: center;
+        padding: 1rem 0;
+      }
+
+      .nav-links.show {
+        display: flex;
+      }
+
+      header {
+        flex-direction: column;
+        text-align: center;
+        padding-top: 8rem;
+      }
+
+      .text-section, .phone-img {
+        max-width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+  <nav>
+    <div class="nav-links" id="navLinks">
+      <a href="#">Home</a>
+      <a href="#">About</a>
+      <a href="#">Types of Scams</a>
+      <a href="#">Prevention Tips</a>
+      <a href="#">Report Scams</a>
+      <a href="#">About the Team</a>
+    </div>
+  </nav>
+
+  <header>
+    <div class="text-section">
+      <h1>One Wrong Click Can Cost You—Learn How to Stay Safe!</h1>
+      <p>Scammers are everywhere, waiting for a single misstep. Don't fall victim to fraud, phishing, or identity theft! <strong>ClickSafe</strong> is your go-to guide for recognizing scams, protecting your data, and staying secure online. Learn, apply, and browse with confidence!</p>
+      <a class="btn" href="#">GET STARTED</a>
+    </div>
+    <img class="phone-img" src="/mnt/data/Screenshot 2025-04-22 184823.png" alt="ClickSafe App" />
+  </header>
+
+  <script>
+    function toggleMenu() {
+      const navLinks = document.getElementById('navLinks');
+      navLinks.classList.toggle('show');
+    }
+  </script>
+</body>
+</html>
