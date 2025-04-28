@@ -12,13 +12,17 @@
     }
 
     #nu-logo {
-      position: absolute;
+      position: fixed;
       top: 1rem;
       left: 1rem;
+      background: white;
+      border-radius: 25%;
+      height: 65px;
+      width: 65px;
     }
     #nu-logoMobile {
       visibility: hidden;
-      position: absolute;
+      position: fixed;
     }
     
 
@@ -62,7 +66,7 @@
       border: none;
       color: white;
       font-size: 2rem;
-      position: absolute;
+      position: fixed;
       top: 1rem;
       right: 1rem;
       z-index: 1100;
@@ -213,13 +217,15 @@
         visibility: hidden;
       }
       #nu-logoMobile {
+        display: flex;
         display: block;
         visibility: visible;
         top: 1rem;
         left: 1rem;
-        position: absolute;
-        height: 250px;
-        width: 250px;
+        position: fixed;
+        height: 85px;
+        width: 85px;
+        z-index: 1000;
       }
 
       .menu-toggle {
