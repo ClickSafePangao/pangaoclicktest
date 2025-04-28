@@ -11,6 +11,17 @@
       padding: 0;
     }
 
+    #nu-logo {
+      position: absolute;
+      top: 1rem;
+      left: 1rem;
+    }
+    #nu-logoMobile {
+      visibility: hidden;
+      position: absolute;
+    }
+    
+
     body {
       font-family: Arial, sans-serif;
       background: linear-gradient(to right, #d8891b, #1c4c88);
@@ -21,16 +32,17 @@
     }
 
     nav {
-      background-color: black;
       padding: 1rem;
       display: flex;
-      gap: 2rem;
       justify-content: center;
       position: fixed;
       top: 0;
       left: 0;
       width: 100%;
       z-index: 1000;
+      background-color: black;
+      border-bottom-left-radius: 100%;
+      border-bottom-right-radius: 100%;
     }
 
     nav a {
@@ -86,7 +98,6 @@
     }
 
     .btn {
-      position:fixed;
       background-color: #f28c28;
       color: white;
       padding: 1rem 2rem;
@@ -101,10 +112,116 @@
       max-width: 300px;
     }
 
+    .purpose-section {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 4rem;
+    }
+
+    .purpose-card {
+      background: rgba(255, 255, 255, 0.1);
+      border: 2px solid rgba(255, 255, 255, 0.3);
+      border-radius: 20px;
+      padding: 3rem;
+      max-width: 400px;
+      text-align: center;
+      font-size: 2rem;
+      box-shadow: 0 0 20px rgba(0,0,0,0.3);
+      backdrop-filter: blur(8px);
+    }
+
+    .typesOfScams-section {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 2rem;
+    }
+
+    .typesOfScams-card1 {
+      background: rgba(52, 245, 255, 0.089);
+      border: 2px solid rgba(255, 255, 255, 0.3);
+      border-radius: 20px;
+      padding: 3rem;
+      width: 500px;
+      text-align: center;
+      font-size: 1rem;
+      box-shadow: 0 0 20px rgba(0,0,0,0.3);
+      backdrop-filter: blur(8px);
+      text-justify: auto;
+      height: 500px;
+      align-content: center;
+    }
+
+    .typesOfScams-card2 {
+      background: rgba(230, 242, 9, 0.071);
+      border: 2px solid rgba(255, 255, 255, 0.3);
+      border-radius: 20px;
+      padding: 2rem;
+      width: 500px;
+      margin: 10px;
+      text-align: center;
+      font-size: 1rem;
+      box-shadow: 0 0 20px rgba(0,0,0,0.3);
+      backdrop-filter: blur(8px);
+      text-justify: inter-word;
+      height: 500px;
+      align-content: center;
+    }
+
+    .typesOfScams-card3 {
+      flex: 1;
+      background: rgba(230, 242, 9, 0.071);
+      border: 2px solid rgba(255, 255, 255, 0.3);
+      border-radius: 20px;
+      padding: 2rem;
+      width: 400px;
+      margin: 10px;
+      text-align: center;
+      font-size: 1rem;
+      box-shadow: 0 0 20px rgba(0,0,0,0.3);
+      backdrop-filter: blur(8px);
+      text-justify: inter-word;
+      height: 400px;
+      align-content: center;
+    }
+
+    .typesOfScams-card4 {
+      flex: 1;
+      background: rgba(52, 245, 255, 0.089);
+      border: 2px solid rgba(255, 255, 255, 0.3);
+      border-radius: 20px;
+      padding: 3rem;
+      width: 400px;
+      text-align: center;
+      font-size: 1rem;
+      box-shadow: 0 0 20px rgba(0,0,0,0.3);
+      backdrop-filter: blur(8px);
+      text-justify: auto;
+      height: 400px;
+      align-content: center;
+    }
+
     @media (max-width: 768px) {
       nav {
         background-color: transparent;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
       }
+
+      #nu-logo {
+        visibility: hidden;
+      }
+      #nu-logoMobile {
+        display: block;
+        visibility: visible;
+        top: 1rem;
+        left: 1rem;
+        position: absolute;
+        height: 250px;
+        width: 250px;
+      }
+
       .menu-toggle {
         display: block;
       }
@@ -134,15 +251,44 @@
       .text-section, .phone-img {
         max-width: 100%;
       }
+
+      .typesOfScams-card1 {
+        width: 90%;
+        padding: 2rem;
+        font-size: 0.9rem;
+        height: auto;
+      }
+
+      .typesOfScams-card2 {
+        width: 90%;
+        padding: 2rem;
+        font-size: 0.9rem;
+        height: auto;
+      }
+
+      .typesOfScams-card3 {
+        width: 90%;
+        padding: 2rem;
+        font-size: 0.9rem;
+        height: auto;
+      }
+      .typesOfScams-card4 {
+        width: 90%;
+        padding: 2rem;
+        font-size: 0.9rem;
+        height: auto;
+      }
     }
   </style>
 </head>
 <body>
+  <img src="nu-lipa-logo.png" id="nu-logoMobile">
   <button class="menu-toggle" onclick="toggleMenu()">☰</button>
   <nav>
+    <img src="nu-lipa-logo.png" id="nu-logo">
     <div class="nav-links" id="navLinks">
       <a href="#">Home</a>
-      <a href="#">About</a>
+      <a href="#purpose-section">About</a>
       <a href="#">Types of Scams</a>
       <a href="#">Prevention Tips</a>
       <a href="#">Report Scams</a>
@@ -156,8 +302,37 @@
       <p>Scammers are everywhere, waiting for a single misstep. Don't fall victim to fraud, phishing, or identity theft! <strong>ClickSafe</strong> is your go-to guide for recognizing scams, protecting your data, and staying secure online. Learn, apply, and browse with confidence!</p>
       <a class="btn" href="#">GET STARTED</a>
     </div>
-    <img class="phone-img" src="/mnt/data/Screenshot 2025-04-22 184823.png" alt="ClickSafe App" />
+    <img class="phone-img" src="Adobe Express - file.png" alt="ClickSafe App" />
   </header>
+
+  <section class="purpose-section" id="purpose-section">
+    <div class="purpose-card">
+      What is the purpose of this website?
+    </div>
+  </section>
+
+  <section class="typesOfScams-section" id="typesOfScams-section">
+    <div class="typesOfScams-card1">
+      Phishing
+Phishing is a type of cyber attack in which a cybercriminal sends an unsolicited message to a user with the intent of stealing their personal information. Cybercriminals trick users into revealing their personal information such as their login credentials or credit card numbers by impersonating a familiar face or reputable business. 
+
+Phishing scams send messages, such as emails or texts, with a malicious attachment or link that downloads malware on your device or directs you to a spoofed website. These spoofed websites imitate legitimate websites and try to trick you into revealing your personal information.
+    </div>
+    <div class="typesOfScams-card2">
+      Catfishing
+Catfishing is a type of social engineering attack in which a cybercriminal creates a fake online identity to deceive and exploit someone else. Most catfishing scams try to initiate a romantic relationship with a victim through social media or dating apps. Catfish scammers exploit those who are emotionally vulnerable to steal the victim’s money or personal information.
+    </div>
+  </section>
+  <section class ="typesOfScams-section" id="typesOfScams-section">
+    <div class="typesOfScams-card3">
+      
+    </div>
+    
+    <div class="typesOfScams-card4">
+      
+    </div>
+  </section>
+
 
   <script>
     function toggleMenu() {
